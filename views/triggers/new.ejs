@@ -1,0 +1,51 @@
+<!-- views/applications/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a New Event that Triggered you</title>
+</head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>dd a New Event that Triggered you</h1>
+
+    <!-- views/applications/new.ejs -->
+
+<form action="" method="">
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" required>
+    
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" required>
+    
+    <label for="people">People Involved:</label>
+    <input type="checkbox" name="notes"> id="people">
+    
+    <label for="reaction">Reaction:</label>
+    <input type="text" name="reaction" id="reaction" required>
+  
+    <label for="rectification">Rectification:</label>
+    <input type="text" name="rectification" id="rectification" required>
+  
+    <label for="notes">Notes:</label>
+    <textarea name="notes" id="notes"></textarea>
+    
+    <label for="status">Status:</label>
+    <select id="status" name="status" required>
+      <option value="succeded">Succeeded</option>
+      <option value="recovered">Recovered</option>
+      <option value="working on it">Working on it</option>
+      <option value="overcomed">Overcome</option>
+      <option value="be careful next time">Be careful next time</option>
+    </select>
+    
+    <!-- Add a submit button -->
+    <button type="submit">Add Trigger</button>
+  </form>
+  
+
+
+  </body>
+</html>

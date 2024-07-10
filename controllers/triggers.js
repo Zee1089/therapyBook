@@ -13,5 +13,9 @@ router.get('/', async (req, res) => {
     
 });
 
+router.get('/new', async (req, res) => {
+    res.render('triggers/new.ejs');
+});
+
 module.exports = router;
 
