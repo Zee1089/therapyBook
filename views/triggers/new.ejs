@@ -13,7 +13,11 @@
 
     <!-- views/applications/new.ejs -->
 
-<form action="" method="">
+<!-- views/applications/new.ejs -->
+
+<form action="/users/<%= user._id %>/triggers" method="POST">
+    <!-- Form inputs below -->
+  
     <label for="date">Date:</label>
     <input type="date" name="date" id="date" required>
     
