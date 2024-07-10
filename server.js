@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const session = require('express-session');
 
 const authController = require('./controllers/auth.js');
+//import the triggers controller into server.js
+const triggersController = require('./controllers/triggers.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -37,6 +39,8 @@ app.get('/', (req, res) => {
 
 
 app.use('/auth', authController);
+//link your controller to a specific route in server.js, incoming requests to /users/applications will be handeled by our triggers controller. 
+app.use('/users/triggers', triggersController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
