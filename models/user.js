@@ -1,21 +1,5 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  triggers: [triggerSchema],
-});
-
-const User = mongoose.model('User', userSchema);
-
-const mongoose = require('mongoose');
-
 const triggerSchema = new mongoose.Schema({
   date: {
     type: Date,
@@ -51,8 +35,21 @@ const triggerSchema = new mongoose.Schema({
 
   }, 
 
-})
+});
 
+const userSchema = mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  triggers: [triggerSchema],
+});
 
+const User = mongoose.model('User', userSchema);
+const Trigger = mongoose.model('Trigger', triggerSchema);
 
-module.exports = User;
+module.exports = { User, Trigger };
