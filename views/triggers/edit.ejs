@@ -7,11 +7,18 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1>Edit <%= trigger.location %> at <%= trigger.date %></h1>
+  <h1>Edit at <%= trigger.location %></h1>
   <form 
     action="/users/<%= user._id %>/triggers/<%= trigger._id %>?_method=PUT"
     method="POST"
   >
+
+  <label for="title">Title:</label>
+  <input type="text" name="title" id="title" value="<%= trigger.title %>">
+
+  <label for="date">Title:</label>
+  <input type="text" name="date" id="date" value="<%= trigger.date %>">
+
     <label for="location">Location:</label>
     <input 
       type="text" 
@@ -19,6 +26,45 @@
       id="location" 
       value="<%= trigger.location %>"
     >
+
+
+
+    <label for="notes">Notes:</label>
+    <textarea name="notes" id="notes"><%= trigger.notes %></textarea>
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option 
+        value="succeded" 
+        <%= trigger.status === "succeded" ? "selected" : "" %>
+      >
+      succeded
+      </option>
+      <option 
+        value="recovered" 
+        <%= trigger.status === "recovered" ? "selected" : "" %>
+      >
+      recovered
+      </option>
+      <option 
+        value="working on it" 
+        <%= trigger.status === "working on it" ? "selected" : "" %> 
+      >
+      working on it
+      </option>
+      <option 
+        value="overcomed" 
+        <%= trigger.status === "overcomed" ? "selected" : "" %>
+      >
+      overcomed
+      </option>
+      <option
+        value="be careful next time"
+        <%= trigger.status === "be careful next time" ? "selected" : "" %>
+      >
+      be careful next time
+      </option>
+    </select>
+
     <button type="submit">Update Event</button>
   </form>
 </body>

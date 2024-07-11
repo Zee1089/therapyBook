@@ -13,7 +13,8 @@
     <% triggers.forEach(trigger => { %>
       <li>
         <a href="/users/<%= user._id %>/triggers/<%= trigger._id %>">
-        <%= trigger.date %> at <%= trigger.location %>
+            <%= trigger.title %>   <%= trigger.date %> at <%= trigger.location %> </a>
+        
       </li>
     <% }) %>
   </ul>

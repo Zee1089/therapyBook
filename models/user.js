@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const triggerSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
   date: {
     type: String,
     required: true,
@@ -15,19 +19,19 @@ const triggerSchema = new mongoose.Schema({
   // //   required: true,
   // // },
 
-  // reaction: {
-  //   type: String,
-  //   required: true, 
-  // },
+  reaction: {
+    type: String,
+    required: true, 
+  },
 
-  // rectification: {
-  //   type: String,
-  //   required: true,
+  rectification: {
+    type: String,
+    required: true,
 
-  // },
-  // notes: {
-  //   type: String,
-  // },
+  },
+  notes: {
+    type: String,
+  },
 
   status : {
     type: String,

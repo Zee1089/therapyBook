@@ -57,19 +57,19 @@ router.get('/:triggerId/edit', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-
-      const currentUser = await User.findById(req.session.user._id);
+       const currentUser = await User.findById(req.session.user._id);
  
       currentUser.triggers.push(req.body);
       await currentUser.save();
 
       res.redirect(`/users/${currentUser._id}/triggers`);
+   
     } catch (error) {
       console.log(error);
       res.redirect('/');
     }
   });
-
+  
 router.delete('/:triggerId', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
