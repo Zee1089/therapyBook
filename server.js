@@ -13,7 +13,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 
 const authController = require('./controllers/auth.js');
-//import the triggers controller into server.js
+
 const triggersController = require('./controllers/triggers.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 //link your controller to a specific route in server.js, incoming requests to /users/applications will be handeled by our triggers controller. 
+app.use('/users/triggers', triggersController);
 app.use('/users/:userId/triggers', triggersController);
 
 app.listen(port, () => {

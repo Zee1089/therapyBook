@@ -1,5 +1,3 @@
-<!-- views/applications/index.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +6,16 @@
   <title>Your Therapy Notebook</title>
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %> 
+  <%- include('../partials/_navbar.ejs') %>
   <h1>Your Therapy Notebook</h1>
-  <a href="/users/<%=user._id%>/triggers/new">Add an App</a>
+  <a href="/users/<%= user._id %>/triggers/new">Add an Event that Triggered You</a>
+  <ul>
+    <% triggers.forEach(trigger => { %>
+      <li>
+        <a href="/users/<%= user._id %>/triggers/<%= trigger._id %>">
+        <%= trigger.date %> at <%= trigger.location %>
+      </li>
+    <% }) %>
+  </ul>
 </body>
 </html>

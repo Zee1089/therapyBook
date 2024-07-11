@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const triggerSchema = new mongoose.Schema({
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   location: {
@@ -10,24 +10,24 @@ const triggerSchema = new mongoose.Schema({
     required: true,
   },
 
-  people: {
-    type: Boolean,
-    required: true,
-  },
+  // // people: {
+  // //   type: Boolean,
+  // //   required: true,
+  // // },
 
-  reaction: {
-    type: String,
-    required: true, 
-  },
+  // reaction: {
+  //   type: String,
+  //   required: true, 
+  // },
 
-  rectification: {
-    type: String,
-    required: true,
+  // rectification: {
+  //   type: String,
+  //   required: true,
 
-  },
-  notes: {
-    type: String,
-  },
+  // },
+  // notes: {
+  //   type: String,
+  // },
 
   status : {
     type: String,
@@ -46,10 +46,9 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  triggers: [triggerSchema],
+triggers: [triggerSchema],
 });
 
 const User = mongoose.model('User', userSchema);
-const Trigger = mongoose.model('Trigger', triggerSchema);
 
-module.exports = { User, Trigger };
+module.exports = User;
