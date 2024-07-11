@@ -8,11 +8,16 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <div class="show-body">
+    <div class="show-header">
+
   <h1><%= trigger.title %></h1>
   <h2>at <%= trigger.location %> </h2>
   <% if (trigger.notes) { %>
     <p>Notes: <%= trigger.notes %></p>
   <% } %> <!-- Closing the conditional statement -->
+  <div class="show-sidebar">
+    <div class="show-actions">
   <a href="/users/<%= user._id %>/triggers/<%= trigger._id %>/edit">
     Edit this Event
   </a>
@@ -23,5 +28,29 @@
   >
     <button type="submit">Delete this Trigger</button>
   </form>
+</div>
+<p>Current Status: <%= trigger.status %>
+</p>
+</div>
+</div>
+<div class="show-notes-container">
+<!-- <% if (application.postingLink) { %>
+<a href="<%= application.postingLink %>" target="_blank">View job posting</a>
+<% } %> -->
+  <% if (application.notes) { %>
+    <div class="show-notes">
+      <h2>Notes:</h2>
+      <p>
+        <%= application.notes %>
+      </p>
+    </div>
+    <% } %>
+</div>
+</div>
+</body>
+Copy
+
+
+
 </body>
 </html>

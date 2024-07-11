@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: #9ac2ef;
+  /* background-color: #9ac2ef; */
 }
 
 .index-body {
@@ -17,10 +17,10 @@ body {
 }
 
 .main-header {
-  font-weight: bold;
+  /* font-weight: bold;
   color: white;
-  font-size: 2.4em;
-  margin: -160px 20px 0 20px;
+  font-size: 2.4em; */
+  margin: -400px 10px 60px 200px;
 }
 
 .subheader {
@@ -55,23 +55,23 @@ body {
 }
 
 .signup-link {
-  background-color: #ce4866;
-  color: white;
+  background-color: blanchedalmond;
+  color: brown;
   margin: 0 0 20px 0;
 }
 
 .signup-link:hover {
-  background-color: #ff5378;
+  background-color: bisque;
 }
 
 .signin-link {
-  background-color: #f6e7e7;
-  color: #1c2e5b;
+  background-color: bisque;
+  color: brown;
   margin: 20px 0 0 0;
 }
 
 .signin-link:hover {
-  background-color: #ffffff;
+  background-color: bisque;
 } 
 .signin-container, .signup-container {
   display: flex;
