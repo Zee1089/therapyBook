@@ -4,20 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Therapy Book</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="index-body">
   <%- include('./partials/_navbar.ejs') %> 
-  <% if (user) { %>
-    <h1>Welcome  <%= user.username %>!</h1>
-    <p>
-      <a href="/auth/sign-out">Sign out</a>
-    </p>
-  <% } else { %>
-    <h1>Welcome to the Theapy Notebook app, User!</h1>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
+  <div class="index-container">
+    <% if (user) { %>
+      <div class="main-header">
+        <h1>Welcome <%= user.username %>!</h1>
+      </div>
+      <div class="auth-links">
+        <a href="/auth/sign-out" class="signin-link">Sign out</a>
+      </div>
+    <% } else { %>
+      <div class="main-header">
+        <h1>Welcome to the Therapy Notebook app, User!</h1>
+      </div>
+      <div class="auth-links">
+        <a href="/auth/sign-up" class="signup-link">Sign up</a> or
+        <a href="/auth/sign-in" class="signin-link">Sign in</a>.
+      </div>
+    <% } %>
+  </div>
 </body>
 </html>

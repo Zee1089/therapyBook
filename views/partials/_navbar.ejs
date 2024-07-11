@@ -2,11 +2,25 @@
 
 <nav>
     <% if(user) { %>
-      <a href="/users/<%=user._id%>/triggers">Your Apps</a>
-      <a href="/auth/sign-out">Sign Out</a>
+      <div class="navbar">
+      <h1 id="nav-header">Your Therapy Notebook</h1>
+      <div class="nav-links">
+      <a class="authlink" href="/users/<%=user._id%>/triggers">Your Apps</a>
+      <a class="authlink" href="/auth/sign-out">Sign Out</a>
+    </div>
+  </div>
     <% } else { %>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
+      <div class="navbar">
+        <!-- <h1 id="nav-header">Therapy Notes</h1>
+        <div class="nav-links">
+          <a class="authlink" href="/auth/sign-in">Sign In</a>
+          <a class="authlink" href="/auth/sign-up">Sign Up</a> -->
+        </div>
+      </div>
     <% } %>
   </nav>
+  
+
+
+
   

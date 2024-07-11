@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Therapy Notebook</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <div class="all-apps-body">
+  <div class="all-apps-header">
   <h1>Your Therapy Notebook</h1>
-  <a href="/users/<%= user._id %>/triggers/new">Add an Event that Triggered You</a>
+  <a class="add-app-link" href="/users/<%= user._id %>/triggers/new">Add an Event that Triggered You</a>
   <ul>
     <% triggers.forEach(trigger => { %>
       <li>
