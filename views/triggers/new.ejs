@@ -9,7 +9,6 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>Add a New Event that Triggered you</h1>
-
   <form action="/users/<%= user._id %>/triggers" method="POST">
 
     <label for="title">Title:</label>
@@ -43,6 +42,7 @@
     </select> 
 
     <button type="submit">Add Trigger</button>
+    
   </form>
 </body>
 </html>
