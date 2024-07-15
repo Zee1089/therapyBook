@@ -1,26 +1,18 @@
-<!-- views/partials/_navbar.ejs -->
-
 <nav>
-    <% if(user) { %>
-      <div class="navbar">
+  <% if (user) { %>
+    <div class="navbar">
       <h1 id="nav-header">Therapy Notebook</h1>
       <div class="nav-links">
-      <a class="authlink" href="/users/<%=user._id%>/triggers">Your Notebook</a>
-      <a class="authlink" href="/auth/sign-out">Sign Out</a>
-    </div>
-  </div>
-    <% } else { %>
-      <div class="navbar2">
-        <ul>
-          <!-- Other links -->
-          <li><a href="/users">Group Therapy Members</a></li>
-      </ul>
-        </div>
+        <a class="authlinknav" href="/users">Group Therapy Members</a>
+        <a class="authlinknav" href="/users/<%= user._id %>/triggers">Your Notebook</a>
+        <a class="authlinknav" href="/auth/sign-out">Sign Out</a>
       </div>
-    <% } %>
-  </nav>
-  
-
-
-
-  
+    </div>
+  <% } else { %>
+    <div class="navbar2">
+      <ul>
+        <!-- Other links can go here if needed for non-logged in users -->
+      </ul>
+    </div>
+  <% } %>
+</nav>

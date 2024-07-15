@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user.js');
-
 // router.get('/', (req, res) => {
 //     res.send('add a note for your therapy book , application index route');
 // });
@@ -54,7 +53,6 @@ router.get('/:triggerId/edit', async (req, res) => {
     }
   });
   
-
 router.post('/', async (req, res) => {
     try {
        const currentUser = await User.findById(req.session.user._id);

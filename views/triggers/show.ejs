@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= trigger.location %></title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/show.css">
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <div class="show-body">
-    <div class="show-header">
       <h1><%= trigger.title %></h1>
       <h2>at <%= trigger.location %></h2>
       <% if (trigger.notes) { %>
@@ -18,14 +17,14 @@
     </div>
     <div class="show-sidebar">
       <div class="show-actions">
-        <a href="/users/<%= user._id %>/triggers/<%= trigger._id %>/edit">
+        <a class="action-button" href="/users/<%= user._id %>/triggers/<%= trigger._id %>/edit">
           Edit this Event
         </a>
         <form action="/users/<%= user._id %>/triggers/<%= trigger._id %>?_method=DELETE" method="POST">
-          <button type="submit">Delete this Trigger</button>
+          <button type="submit" class="action-button">Delete this Trigger</button>
+          <p>Current Status: <%= trigger.status %></p>
         </form>
       </div>
-      <p>Current Status: <%= trigger.status %></p>
     </div>
   </div>
 </body>
