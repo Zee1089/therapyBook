@@ -3,10 +3,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 
-// router.get('/', (req, res) => {
-//     res.send('Users route');
-// });
-
 // Index route to get all users
 router.get('/', async (req, res) => {
     try {
@@ -16,7 +12,6 @@ router.get('/', async (req, res) => {
         res.status(500).send(err);
     }
 });
-
 
 // Show route to get a specific user and their comments/posts 
 router.get('/:id', async (req, res) => {

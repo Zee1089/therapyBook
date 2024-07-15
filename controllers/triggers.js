@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user.js');
-// router.get('/', (req, res) => {
-//     res.send('add a note for your therapy book , application index route');
-// });
 
 router.get('/', async (req, res) => {
     try {

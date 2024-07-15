@@ -7,11 +7,8 @@ The __Therapy Notebook__ , is a web application designed to help patients manage
 
 ## 1. Getting Started
 
-Ling to Deployed App: 
+[Link to Deployed App](https://therapy-notebook-cf1d076c3da4.herokuapp.com/)
 
-```javascript
-
-``` 
 
 ## 2. Attributions 
 
