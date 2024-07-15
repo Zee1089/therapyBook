@@ -14,11 +14,6 @@ const triggerSchema = new mongoose.Schema({
     required: true,
   },
 
-  // // people: {
-  // //   type: Boolean,
-  // //   required: true,
-  // // },
-
   reaction: {
     type: String,
     required: true, 

@@ -1,9 +1,12 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  background-color: #9ac2ef;
+  /* height: 100vh; */
+  width: 700px;
+  background-color: #f3be94;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .show-body {
@@ -112,4 +115,70 @@ h2 {
   color: #1c2e5b;
   text-align: left;
   font-size: 1.2em;
+}
+
+/* Style for the navbar when user is logged in */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid brown;
+  border-radius: 15px; 
+}
+
+/* You might want to add some different styles if the navbar changes when user is not logged in */
+.navbar2 {
+  background-color: #ffffff; /* White background for contrast */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  border-radius: 15px;
+
+}
+
+
+#nav-header {
+  color: brown; /* Dark grey color for text */
+  font-size: 24px; /* Large size for visibility */
+  font-weight: bold; /* Bold font for emphasis */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Spacing between links */
+  justify-content: center;
+}
+
+.authlinknav {
+  color: brown; /* Bootstrap primary blue for familiarity */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Sufficient size for readability */
+  padding: 5px 10px; /* Padding for better touch interaction */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.authlinknav:hover {
+  color: #0056b3; /* Darker blue on hover for visual feedback */
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar, .navbar2 {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+  .nav-links {
+      flex-direction: column; /* Align links vertically for easier access */
+      gap: 10px;
+  }
+  #nav-header {
+      margin-bottom: 10px; /* Add some space between the header and links */
+  }
 }

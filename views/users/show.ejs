@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= user.username %>'s Notebook</title>
+    <link rel="stylesheet" href="/css/show.css">
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
@@ -15,7 +16,7 @@
                 <li><%= t.notes %></li>
             <% }) %>
         <% } else { %>
-            <li>No notes on this one</li>
+            <li>No notes </li>
         <% } %>
     </ul>
     <a href="/users">Back to Community</a>

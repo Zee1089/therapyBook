@@ -1,15 +1,13 @@
-navbar {
-display: flex; 
-flex-direction: row;
-max-width: 100vw; 
-padding: 5px 20px; 
-justify-content: space-around;
-align-items: center; 
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid brown;
+    border-radius: 15px; 
+  }
 
-}
-
-
-#nav-header { 
+/* #nav-header { 
 color: #ce4866;
 size: 1em !important; 
 margin: 0; 
@@ -24,4 +22,4 @@ font-weight: bold;
 
 .authlink:hover { 
 color: white; 
-}
+} */ */

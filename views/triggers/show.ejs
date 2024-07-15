@@ -9,13 +9,11 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <div class="show-body">
-      <h1><%= trigger.title %></h1>
-      <h2>at <%= trigger.location %></h2>
+      <h1><%= trigger.title %> at <%= trigger.location %></h1>
       <% if (trigger.notes) { %>
         <p>Notes: <%= trigger.notes %></p>
       <% } %>
     </div>
-    <div class="show-sidebar">
       <div class="show-actions">
         <a class="action-button" href="/users/<%= user._id %>/triggers/<%= trigger._id %>/edit">
           Edit this Event
@@ -25,7 +23,6 @@
           <p>Current Status: <%= trigger.status %></p>
         </form>
       </div>
-    </div>
   </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,5 +26,35 @@
   </div>
   <a class="add-app-link" href="/users/<%= user._id %>/triggers/new">Add an Event that Triggered You</a>
 </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Therapy Notebook</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="triggers-index-body">
+    <div class="all-apps-header">
+      <h1>Your Therapy Notebook: Main Triggers</h1>
+    </div>
+    <div class="trigger-list">
+      <ul>
+        <% triggers.forEach(trigger => { %>
+          <li>
+            <a href="/users/<%= user._id %>/triggers/<%= trigger._id %>">
+              <%= trigger.title %> - <%= trigger.date %> at <%= trigger.location %>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+    <a class="add-app-link" href="/users/<%= user._id %>/triggers/new">Add an Event that Triggered You</a>
+  </div>
 </body>
 </html>

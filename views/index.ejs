@@ -5,30 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Therapy Book</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+PE:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body class="index-body">
   <%- include('./partials/_navbar.ejs') %> 
   <div class="index-container">
-    <% if (user) { %>
-      <div class="main-header">
-        <h1>Welcome <%= user.username %>!</h1>
-      </div>
-      <div class="auth-links">
-        <a href="/auth/sign-out" class="signin-link">Sign out</a>
-      </div>
-    <% } else { %>
-      <div class="main-header">
-        <h1>Welcome to the Therapy Notebook</h1>
-      </div>
-      <div class="auth-links-container">
-        <div class="auth-links">
-          <a href="/auth/sign-up" class="signup-link">Sign up</a> or
-          <a href="/auth/sign-in" class="signin-link">Sign in</a>
+    <div class="main-content">
+      <div class="header-auth-links">
+        <div class="main-header">
+          <h1>Welcome to the Therapy Notebook</h1>
+        </div>
+        <div class="auth-links-container">
+          <div class="auth-links">
+            <% if (user) { %>
+              <a href="/auth/sign-out" class="signin-link">Sign out</a>
+            <% } else { %>
+              <a href="/auth/sign-up" class="signup-link">Sign up</a>
+              <span>or</span>
+              <a href="/auth/sign-in" class="signin-link">Sign in</a>
+            <% } %>
+          </div>
         </div>
       </div>
-    <% } %>
-    <div class="info-section"> 
-      This Website is to track your therapeutic progress, get support from your support peer group, and call it a day.
+      <div class="info-section"> 
+        This Website is to track your therapeutic progress, get support from your support peer group, and call it a day.
+      </div>
     </div>
   </div>
 </body>
