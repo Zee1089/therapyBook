@@ -1,147 +1,78 @@
+/* General Styles */
 body {
+  font-family: "Playwrite PE", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  height: 100vh;
+  background: url('/images/pic.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.index-container, .show-body {
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
-  width: 700px;
-  background-color: #f3be94;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+  margin: 20px auto; /* Center container with margin */
+  max-width: 800px; /* Set a max-width for better readability */
 }
 
-.show-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.show-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-}
-
-.show-header > h1 {
+.main-header {
+  font-size: 2.4em;
   color: #1c2e5b;
-  font-size: 3.4em;
-  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
-.show-actions {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0 0 30px;
-}
-
-button {
-  padding: 8px 10px;
-  background-color: #ce4866;
-  color: white;
-  border-radius: 30px;
-  border: none;
-  font-size: 1.1em;
-  width: 10em;
-  margin: 5px;
-}
-
-button:hover {
-  background-color: #e84a6c;
-}
-
-.show-actions > a {
-  background-color: #4b598e;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-  padding: 8px 10px;
-  border-radius: 30px;
-  width: 10em;
-  text-align: center;
-  margin: 5px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.show-actions > a:hover {
-  background-color: #1c2e5b;
-}
-
-p {
-  color: #ce4866;
-  font-weight: bold;
-  font-size: 1.4em;
-  margin: 10px 30px;
-  text-align: center;
-}
-
-.show-notes-container {
-  width: 90%;
-  margin: 20px 0;
-}
-
-.show-notes-container > a {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  font-size: 1.4em;
-  margin: 20px;
-}
-
-.show-notes-container > a:hover {
+.subheader {
+  margin: 0 20px;
+  font-size: 1.2em;
   color: #4b598e;
 }
 
-.show-notes {
-  background-color: #f6e7e7;
-  width: 85%;
-  border-radius: 20px;
-  padding: 40px 40px 20px 40px;
-  margin: 20px 10px;
+/* Button Styles */
+.show-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
-h2 {
-  margin: 0 10px;
-  color: #1c2e5b;
+.action-button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 10px 20px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Get elements to line up correctly */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 16px; /* Rounded corners */
 }
 
-.show-notes > p {
-  font-weight: normal;
-  color: #1c2e5b;
-  text-align: left;
-  font-size: 1.2em;
+.action-button:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
-
-/* Style for the navbar when user is logged in */
 .navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid brown;
+  border-bottom: 2px solid #6B4226; /* A rich brown color */
   border-radius: 15px; 
+  padding: 20px 0; /* Increased padding for better spacing */
 }
-
-/* You might want to add some different styles if the navbar changes when user is not logged in */
-.navbar2 {
-  background-color: #ffffff; /* White background for contrast */
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 2px solid #ccc;
-  border-radius: 15px;
-
-}
-
 
 #nav-header {
-  color: brown; /* Dark grey color for text */
+  color: #6B4226; /* Rich brown color */
   font-size: 24px; /* Large size for visibility */
   font-weight: bold; /* Bold font for emphasis */
   display: flex;
@@ -149,36 +80,38 @@ h2 {
   margin-bottom: 10px;
 }
 
-
 .nav-links {
   display: flex;
-  gap: 20px; /* Spacing between links */
+  gap: 20px;
   justify-content: center;
 }
 
 .authlinknav {
-  color: brown; /* Bootstrap primary blue for familiarity */
-  text-decoration: none; /* Remove underline */
-  font-size: 16px; /* Sufficient size for readability */
-  padding: 5px 10px; /* Padding for better touch interaction */
-  transition: color 0.3s; /* Smooth transition for hover effect */
+  color: white; /* White text for contrast */
+  background-color: #F5CBA7; /* Rich brown background */
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
 }
 
 .authlinknav:hover {
-  color: #0056b3; /* Darker blue on hover for visual feedback */
+  background-color: #8B5A2B; /* Slightly darker brown on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
-
-
 @media (max-width: 768px) {
-  .navbar, .navbar2 {
-      flex-direction: column; /* Stack elements vertically on smaller screens */
+  .navbar {
+    flex-direction: column;
   }
   .nav-links {
-      flex-direction: column; /* Align links vertically for easier access */
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
   #nav-header {
-      margin-bottom: 10px; /* Add some space between the header and links */
+    margin-bottom: 10px;
   }
 }

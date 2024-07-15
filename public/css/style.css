@@ -4,7 +4,14 @@ body {
   padding: 0;
   box-sizing: border-box;
   justify-content: center;
+   height: 100vh;
+  background: url('/images/pic.png') no-repeat center center fixed;
+  background-size: cover;
 }
+
+
+
+
 
 .playwrite-pe-therapy-title,
 .playwrite-pe-therapy-info {
@@ -50,6 +57,7 @@ body {
 .index-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
   width: 80%;
   padding: 20px;
@@ -118,6 +126,7 @@ body {
 h1 {
   color: #1c2e5b;
   size: 150px;
+  font-family: Arial;
 }
 
 form {
@@ -212,6 +221,7 @@ button {
   text-decoration: none;
   margin-top: 20px;
   transition: background-color 0.3s, transform 0.3s;
+  font-family: Arial, sans-serif; 
 }
 
 .add-app-link:hover {
@@ -224,6 +234,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: Arial,
 }
 
 .triggers-index-body {
@@ -260,13 +271,13 @@ button {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid brown;
+  border-bottom: 2px solid #6B4226; /* A rich brown color */
   border-radius: 15px; 
-  padding: 10px 0;
+  padding: 20px 0; /* Increased padding for better spacing */
 }
 
 #nav-header {
-  color: brown; /* Dark grey color for text */
+  color: #6B4226; /* Rich brown color */
   font-size: 24px; /* Large size for visibility */
   font-weight: bold; /* Bold font for emphasis */
   display: flex;
@@ -281,15 +292,20 @@ button {
 }
 
 .authlinknav {
-  color: brown;
-  text-decoration: none;
+  color: white; /* White text for contrast */
+  background-color: #F5CBA7; /* Rich brown background */
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
   font-size: 16px;
-  padding: 5px 10px;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
 }
 
 .authlinknav:hover {
-  color: #0056b3;
+  background-color: #8B5A2B; /* Slightly darker brown on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
 @media (max-width: 768px) {
@@ -304,3 +320,26 @@ button {
     margin-bottom: 10px;
   }
 }
+
+li {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif; /* Apply basic font */
+  background-color: #e7f3ff; /* Light blue background */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.index-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+
+
+

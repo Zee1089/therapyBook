@@ -8,21 +8,19 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <div class="show-body">
-      <h1><%= trigger.title %> at <%= trigger.location %></h1>
-      <% if (trigger.notes) { %>
-        <p>Notes: <%= trigger.notes %></p>
-      <% } %>
+  <div class="index-container">
+    <% if (trigger.notes) { %>
+      <p class="subheader">Notes: <%= trigger.notes %></p>
+    <% } %>
+    <div class="show-actions">
+      <a class="action-button" href="/users/<%= user._id %>/triggers/<%= trigger._id %>/edit">
+        Edit this Event
+      </a>
+      <form action="/users/<%= user._id %>/triggers/<%= trigger._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit" class="action-button">Delete this Trigger</button>
+      </form>
+      <p class="subheader">Current Status: <%= trigger.status %></p>
     </div>
-      <div class="show-actions">
-        <a class="action-button" href="/users/<%= user._id %>/triggers/<%= trigger._id %>/edit">
-          Edit this Event
-        </a>
-        <form action="/users/<%= user._id %>/triggers/<%= trigger._id %>?_method=DELETE" method="POST">
-          <button type="submit" class="action-button">Delete this Trigger</button>
-          <p>Current Status: <%= trigger.status %></p>
-        </form>
-      </div>
   </div>
 </body>
 </html>

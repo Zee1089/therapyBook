@@ -1,6 +1,7 @@
 <img src="./public/images/notebookpic.png" alt="coding" width="200"/>
 
-# Therapy Notebook
+# The Therapy Notebook 
+## *Making your therapeutic journey easier*
 
 The __Therapy Notebook__ , is a web application designed to help patients manage and track their triggers during and between therapy sessions. It allows users to monitor their progress and make consistent behavioral changes using newly learned therapeutic techniques. The application also enables users to support other members of their group therapy sessions. This app is built to help patients, who can feel confused about their therapeutic progress and who would benefit from understanding and visualizing their progress in a more engaging and insightful way. 
 
