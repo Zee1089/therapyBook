@@ -26,3 +26,4 @@ router.get('/:id', async (req, res) => {
     }
 });
 module.exports = router;
+//stackOverflow helped with router.get('/:id', async (req, res)

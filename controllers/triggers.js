@@ -3,6 +3,8 @@ const router = express.Router();
 
 const User = require('../models/user.js');
 
+//: Render a list of all triggers for the current user.
+
 router.get('/', async (req, res) => {
     try {
       // Look up the user from req.session

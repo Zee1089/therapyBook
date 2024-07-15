@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="index-container"
         <%- include('../partials/_navbar.ejs') %>
         <div class="content-container">
             <h1><%= user.username %>'s Notebook</h1>
@@ -17,7 +17,7 @@
                         <li><%= t.notes %></li>
                     <% }) %>
                 <% } else { %>
-                    <li>No notes</li>
+                    <li>No notes yet</li>
                 <% } %>
             </ul>
             <a class="add-app-link" href="/users">Back to Community</a>

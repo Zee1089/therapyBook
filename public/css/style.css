@@ -184,6 +184,7 @@ button {
   list-style: none;
 }
 
+
 .trigger-list li {
   margin-bottom: 10px;
 }
@@ -334,8 +335,11 @@ li {
   width: 100%;
 }
 
-
-
+.user-list li::before {
+  content: '\1F464'; /* chatGPT found me that cute Unicode character for a user icon */
+  margin-right: 10px;
+  font-size: 20px;
+}
 
 
 
