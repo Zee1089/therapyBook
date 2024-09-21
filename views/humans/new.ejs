@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a New Human</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="new">
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New Human</h1>
+    <form action="/users/<%= user._id %>/humans" method="POST">
+
+      <!-- Name Field -->
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <!-- How/Where You Met Field -->
+      <label for="meeting">How/where did you meet:</label>
+      <input type="text" name="meeting" id="meeting" required>
+
+      <!-- Relationship Type Field -->
+      <label for="relationship">How are you related:</label>
+      <select id="relationship" name="relationship" required>
+        <option value="parent">Parent</option>
+        <option value="sibling">Sibling</option>
+        <option value="acquaintance">Acquaintance</option>
+        <option value="friend">Friend</option>
+        <option value="college_friend">College Friend</option>
+        <!-- Add other relationship types as needed -->
+      </select>
+
+      <!-- Status of the Relationship Field -->
+      <label for="status">Status of the relationship:</label>
+      <select id="status" name="status" required>
+        <option value="ongoing">Ongoing</option>
+        <option value="past">Past</option>
+      </select>
+
+      <!-- Characteristics Field -->
+      <label for="characteristics">Characteristics of the person:</label>
+      <textarea name="characteristics" id="characteristics" rows="3"></textarea>
+
+      <!-- Pros Field -->
+      <label for="pros">Pros:</label>
+      <textarea name="pros" id="pros" rows="3"></textarea>
+
+      <!-- Cons Field -->
+      <label for="cons">Cons:</label>
+      <textarea name="cons" id="cons" rows="3"></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit">Add Human</button>
+
+    </form>
+  </div>
+</body>
+</html>

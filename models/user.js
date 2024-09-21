@@ -1,5 +1,36 @@
 const mongoose = require('mongoose');
 
+// Define the schema for Human
+const humanSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  meeting: {
+    type: String,  // How/where did you meet
+    required: true,
+  },
+  relationship: {
+    type: String,
+    enum: ['parent', 'sibling', 'acquaintance', 'friend', 'college_friend'],  // Add more if needed
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ['ongoing', 'past'],
+    required: true,
+  },
+  characteristics: {
+    type: String,
+  },
+  pros: {
+    type: String,
+  },
+  cons: {
+    type: String,
+  }
+});
+
 const triggerSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -46,6 +77,7 @@ const userSchema = mongoose.Schema({
     required: true,
   },
 triggers: [triggerSchema],
+humans: [humanSchema], 
 });
 
 const User = mongoose.model('User', userSchema);

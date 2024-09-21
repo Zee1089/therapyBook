@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
 
-//: Render a list of all triggers for the current user.
+//: Render a list of all humans for the current user.
 
 router.get('/', async (req, res) => {
     try {
       // Look up the user from req.session
       const currentUser = await User.findById(req.session.user._id);
       // Render index.ejs, passing in all of the current user's 
-      res.render('triggers/index.ejs', {
-        triggers: currentUser.triggers,
+      res.render('humans/index.ejs', {
+        humans: currentUser.humans,
       });
     } catch (error) {
       // If any errors, log them and redirect back home
@@ -20,16 +20,16 @@ router.get('/', async (req, res) => {
   });
 
   router.get('/new', async (req, res) => {
-    res.render('triggers/new.ejs');
+    res.render('humans/new.ejs');
   });
 
-router.get('/:triggerId', async (req, res) => {
+router.get('/:humanId', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
 
-      const trigger = currentUser.triggers.id(req.params.triggerId);
-      res.render('triggers/show.ejs', {
-        trigger: trigger,
+      const human = currentUser.humans.id(req.params.humanId);
+      res.render('humans/show.ejs', {
+        human: human,
       });
     } catch (error) {
       // If any errors, log them and redirect back home
@@ -38,12 +38,12 @@ router.get('/:triggerId', async (req, res) => {
     }
   });
 
-router.get('/:triggerId/edit', async (req, res) => {
+router.get('/:humanId/edit', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
-      const trigger = currentUser.triggers.id(req.params.triggerId);
-      res.render('triggers/edit.ejs', {
-        trigger: trigger,
+      const human = currentUser.humans.id(req.params.humanId);
+      res.render('humans/edit.ejs', {
+        human: human,
       });
     } catch (error) {
       console.log(error);
@@ -55,10 +55,10 @@ router.post('/', async (req, res) => {
     try {
        const currentUser = await User.findById(req.session.user._id);
  
-      currentUser.triggers.push(req.body);
+      currentUser.humans.push(req.body);
       await currentUser.save();
 
-      res.redirect(`/users/${currentUser._id}/triggers`);
+      res.redirect(`/users/${currentUser._id}/humans`);
    
     } catch (error) {
       console.log(error);
@@ -66,13 +66,13 @@ router.post('/', async (req, res) => {
     }
   });
   
-router.delete('/:triggerId', async (req, res) => {
+router.delete('/:humanId', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
-      currentUser.triggers.id(req.params.triggerId).deleteOne();
+      currentUser.humans.id(req.params.humanId).deleteOne();
       // Save changes to the user
       await currentUser.save();
-      res.redirect(`/users/${currentUser._id}/triggers`);
+      res.redirect(`/users/${currentUser._id}/humans`);
     } catch (error) {
       // If any errors, log them and redirect back home
       console.log(error);
@@ -80,17 +80,17 @@ router.delete('/:triggerId', async (req, res) => {
     }
   });
 
-router.put('/:triggerId', async (req, res) => { 
+router.put('/:humanId', async (req, res) => { 
     try {
       // Find the user from req.session
       const currentUser = await User.findById(req.session.user._id);
-      const trigger = currentUser.triggers.id(req.params.triggerId);
+      const human = currentUser.humans.id(req.params.humanId);
 
-      trigger.set(req.body);
+      human.set(req.body);
       // Save the current user
       await currentUser.save();
       res.redirect(
-        `/users/${currentUser._id}/triggers/${req.params.triggerId}`
+        `/users/${currentUser._id}/humans/${req.params.humanId}`
       );
     } catch (error) {
       console.log(error);

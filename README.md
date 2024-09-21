@@ -19,8 +19,8 @@ Background Pic:  https://stock.adobe.com/search?k=therapist+office+background
 ## 3. Technologies Used
 
 * __Frontend__: Built using HTML, CSS, and JavaScript for a responsive and interactive user interface.
-* __Backend__: Developed using Node.js and Express for server-side logic and API requests.
-* __Database__:  MongoDB is used to store user data, therapy session details, and group therapy information.
+* __Backend__: Developed using Node.js and Express for server-side logic.
+* __Database__:  MongoDB is used to store user data, triggers data, and group therapy members notes
 
 
 ## Next Step 

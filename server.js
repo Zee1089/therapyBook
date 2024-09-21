@@ -13,6 +13,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
 const usersController = require('./controllers/users.js');
 const triggersController = require('./controllers/triggers.js');
+const humansController = require('./controllers/humans.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -38,9 +39,11 @@ app.use(
 //PassUserToView should be included before all our routes, including our homepage, just
 app.use(passUserToView);
 
+
+
 app.get('/', (req, res) => {
   if (req.session.user) {
-    res.redirect(`/users/${req.session.user._id}/triggers`);
+    res.redirect(`/users/${req.session.user._id}/humans`);
   } else {
     res.render('index.ejs');
   }
@@ -48,9 +51,13 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
+
+app.use('/users/humans', humansController);
+app.use('/users/:userId/humans', humansController);
 //link your controller to a specific route in server.js, incoming requests to /users/applications will be handeled by our triggers controller. 
 app.use('/users/triggers', triggersController);
 app.use('/users/:userId/triggers', triggersController);
+
 app.use('/users', usersController);
 
 
